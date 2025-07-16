@@ -1,3 +1,3 @@
 print("helloworld")
 #Das Erzeugen von Zeilenumbrüchen und eingerückten Prints
-print("Uf'm Bergli \nBin i gsässe,\nHa de Vögle\nZugeschaut;\nHängt gesunge,\nHängt gesprunge,\nHängt's Nästli\nGebaut.")
+a = print("Uf'm Bergli \nBin i gsässe,\nHa de Vögle\nZugeschaut;\nHängt gesunge,\nHängt gesprunge,\nHängt's Nästli\nGebaut.")
