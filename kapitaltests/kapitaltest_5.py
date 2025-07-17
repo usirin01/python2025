@@ -8,7 +8,7 @@ b = float(input("Gib einen Wert für b ein: "))
 c = float(input("Gib einen Wert für c ein: "))
 
 #Eingaben anzeigen
-print("==========================")
+print("\n==========================")
 print("Deine Eingaben: ")
 print("a = " + str(a) + ", b = " + str(b) + ", c = " + str(c))
 
@@ -21,11 +21,11 @@ x1 = (-b + math.sqrt(D)) / (2 * a)
 x2 = (-b - math.sqrt(D)) / (2 * a)
 
 #Ergebnis anzeigen
-print("==========================")
+print("\n==========================")
 print("Daraus ergeben sich folgende Lösungen: ")
 print("Diskriminante D = ")
 print("Lösung x_1 = " + str(x1))
 print("Lösung x_1 = " + str(x2))
 
-print("==========================")
+print("\n==========================")
 print("Das wars und bis bald!")
