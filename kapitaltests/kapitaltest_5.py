@@ -23,7 +23,7 @@ x2 = (-b - math.sqrt(D)) / (2 * a)
 #Ergebnis anzeigen
 print("\n==========================")
 print("Daraus ergeben sich folgende Lösungen: ")
-print("Diskriminante D = ")
+print("Diskriminante D = " + str(D))
 print("Lösung x_1 = " + str(x1))
 print("Lösung x_1 = " + str(x2))
 
