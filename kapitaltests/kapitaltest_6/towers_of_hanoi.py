@@ -32,3 +32,4 @@ c.append(a.pop())
 print(a, b, c)  
 
 print("Und damit sind wir fertig:")
+print()
