@@ -25,7 +25,7 @@ def main():
     #Prüfen(numerisch)
 
     if not (tag_str.isnumeric() and monat_str.isnumeric() and jahr_str.isnumeric()):
-        print("Alle drei Argumente müssen ganze Zahlen sein.")
+        print("Es wuden nicht zur Zahlen spezifiert.")
         return    
 
     tag, monat, jahr = int(tag_str), int(monat_str), int(jahr_str)
