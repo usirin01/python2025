@@ -13,12 +13,13 @@ while satz_nummer <= 3:
     teile = satz.split("-")
     if len(teile) == 4:
         alle_saetze.append(teile)
+        #print(alle_saetze)
         satz_nummer = satz_nummer + 1
     else:
         print(" Fehler: Bitte genau 4 Teile ein geben ( Subjekt - Verb - Adverb - Objekt).")
 
 #Transponieren mit zip()
-subjekte, verben, adverben, objekte = zip(*alle_saetze)
+subjekte, verben, adverben, objekte = zip(*alle_saetze) #Neues Form der Sätze
 
 #Zufällige Auswahl
 
