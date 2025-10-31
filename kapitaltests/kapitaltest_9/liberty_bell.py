@@ -30,15 +30,21 @@ def main():
     machine_nickels = 20
 
     print("Willkommen bei Liberty Bell!")
-    print(f"Du startest mit {player_nickels} Nickels .\n")
+    print(f"Du startest mit {player_nickels} Nickels.\n")
 
+    antwort = ""
     while player_nickels > 0 and machine_nickels > 0:
         #Will Spieler weiterspielen?
         antwort = input("Will Spieler aufhören? (j/n):").lower()
         if antwort == "j":
             print("Spiel beendet. Danke fürs Spielen!")
             break
-        
+        elif antwort == "n":
+            pass
+        else:
+            print("Ungültige Eingabe. Bitte 'j' oder 'n' eingeben.")
+            continue
+
         #Einsatz abfragen
         try: #gegen ungültige Eingabe schützen
             bet = int(input(f"Wie viel Nickels einsetzen? (Spieler hat {player_nickels}):"))
@@ -62,8 +68,8 @@ def main():
         win = check_win(reel)
         if win > 0:
             print(f"Gewonnen! Auszahlung: {win} Nickels.")
-            player_coins += win
-            machine_coins -= win
+            player_nickels += win
+            machine_nickels -= win
         else:
             print("Leider verloren.")
 
