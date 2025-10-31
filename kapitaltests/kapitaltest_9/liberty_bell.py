@@ -26,11 +26,11 @@ def spin():
 
 #Hauptprogramm
 def main():
-    player_nickels = int(input"Anzahl Nickels des Spielers: ")
+    player_nickels = int(input("Anzahl Nickels des Spielers: "))
     machine_nickels = 20
 
     print("Willkommen bei Liberty Bell!")
-    print(f"Du startest mit {player} Nickels .\n")
+    print(f"Du startest mit {player_nickels} Nickels .\n")
 
     while player_nickels > 0 and machine_nickels > 0:
         #Will Spieler weiterspielen?
@@ -51,8 +51,8 @@ def main():
             continue
 
         #Spieler gibt Einsatz
-        player_coins -= bet
-        machine_coins += bet
+        player_nickels -= bet
+        machine_nickels += bet
 
         #Drehen
         reel = spin()
@@ -67,7 +67,7 @@ def main():
         else:
             print("Leider verloren.")
 
-        print (f"Spieler hat jetzt: {player_coins} Nickels , Maschine: {machine_coins} Nickels \n")
+        print (f"Spieler hat jetzt: {player_nickels} Nickels , Maschine: {machine_nickels} Nickels \n")
 
 
     #Spielende Kontrolle
