@@ -24,57 +24,58 @@ def check_win(reel):
 def spin():
     return [random.choice(symbols) for _ in range(3)]
 
-#Eine Runde spielen
-def play_round(bet, player_coins, machine_coins):
-    if bet > player_coins:
-        print("Du hast nicht genug Nickels!")
-        return player_coins, machine_coins
-
-    
-    #Spieler gibt Einsatz
-    player_coins -= bet
-    machine_coins += bet
-
-    reel = spin()
-    print(f"Die Symbole: {reel[0]} | {reel[1]} | {reel[2]}")
-
-    win = check_win(reel)
-    if win > 0:
-        print(f"Gewonnen! Auszahlung: {win} Nickels.")
-        player_coins += win
-        machine_coins -= win
-    else:
-        print("Leider verloren.")
-
-    print (f"Spieler hat jetzt: {player_coins} Nickels , Maschine: {machine_coins} Nickels \n")
-    return player_coins, machine_coins
-    
 #Hauptprogramm
 def main():
-    player = 10
-    machine = 20
+    player_nickels = int(input"Anzahl Nickels des Spielers: ")
+    machine_nickels = 20
 
     print("Willkommen bei Liberty Bell!")
     print(f"Du startest mit {player} Nickels .\n")
 
-    while player > 0 and machine > 0:
-        eingabe = input("Wie viel Nickes einsetzen? (oder 'q' zum Beenden): ")
-
-        if eingabe.lower( ) == "q":
+    while player_nickels > 0 and machine_nickels > 0:
+        #Will Spieler weiterspielen?
+        antwort = input("Will Spieler aufhören? (j/n):").lower()
+        if antwort == "j":
             print("Spiel beendet. Danke fürs Spielen!")
             break
+        
+        #Einsatz abfragen
         try: #gegen ungültige Eingabe schützen
-            bet = int(eingabe)
+            bet = int(input(f"Wie viel Nickels einsetzen? (Spieler hat {player_nickels}):"))
         except ValueError:
             print("Bitte eine gültige Zahl eingeben.")
             continue
 
-        player, machine = play_round(bet, player, machine)
+        if bet > player_nickels:
+            print("Du hast nicht genug Nickels.")
+            continue
 
-    if player <= 0:
+        #Spieler gibt Einsatz
+        player_coins -= bet
+        machine_coins += bet
+
+        #Drehen
+        reel = spin()
+        print(f"Die Symbole: {reel[0]} | {reel[1]} | {reel[2]}")
+
+        #Gewinn prüfen
+        win = check_win(reel)
+        if win > 0:
+            print(f"Gewonnen! Auszahlung: {win} Nickels.")
+            player_coins += win
+            machine_coins -= win
+        else:
+            print("Leider verloren.")
+
+        print (f"Spieler hat jetzt: {player_coins} Nickels , Maschine: {machine_coins} Nickels \n")
+
+
+    #Spielende Kontrolle
+    if player_nickels <= 0:
         print("Du hast keine Nickels mehr. Spiel vorbei!")
-    elif machine <= 0:
+    elif machine_nickels <= 0:
         print("Die Maschine hat keine Nickels mehr. Du hast gewonnen!")
+
 
 if __name__ == "__main__":
     main()
