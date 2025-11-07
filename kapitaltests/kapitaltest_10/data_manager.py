@@ -23,7 +23,7 @@ def filter_geschlecht(daten):
     geschlecht = input("Bitte Geschlecht eingeben (Male/Female): ").lower()
     gefiltert = []
     for person in daten:
-        if person[4] == geschlecht:
+        if person[4].lower() == geschlecht:
             gefiltert.append(person)
     return gefiltert
 
